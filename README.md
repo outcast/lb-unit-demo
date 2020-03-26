@@ -34,3 +34,7 @@ Author: James Jones <jam.jones@nginx.com>
 
 ### To Destroy
   `./destroy.sh`
+
+
+### Modifying Application
+The application is stored in `python-app`. You can add more modules or edit the file that is there. If you add more modules or change the name of current module be sure to edit the `unit.conf` according. 
