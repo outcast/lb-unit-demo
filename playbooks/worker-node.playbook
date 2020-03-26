@@ -1,0 +1,49 @@
+---
+- name: Setup Nginx Unit worker node
+  hosts: worker
+  tasks:
+
+  - name: Install Nginx OSS apt key
+    apt_key:
+      url: https://nginx.org/keys/nginx_signing.key
+      state: present
+
+  - name: Add Nginx OSS Repo
+    apt_repository:
+      repo: deb https://packages.nginx.org/unit/ubuntu/ {{ ansible_distribution_release }} unit
+      state: present
+
+  - name: Add Nginx OSS Source Repo
+    apt_repository:
+      repo: deb-src https://packages.nginx.org/unit/ubuntu/ {{ ansible_distribution_release }} unit
+      state: present
+
+  - name: Install Nginx Unit and other packages
+    package:
+      name:
+      - unit
+      - python3
+      - python3-pip
+      - unit-dev
+      - unit-python3.6
+      state: latest
+
+  - name: Make python-app dir
+    file:
+      path: /opt/python-app
+      state: directory
+      mode: '0755'
+
+  - name: copy python-app files
+    copy:
+      src: "{{ item }}"
+      dest: /opt/python-app
+      mode: '0644'
+    with_fileglob:
+      - ../python-app/*
+
+  - name: Unit Restart
+    include: unit-restart.playbook
+
+  - name: Configure Example Unit Python3.6 app
+    command: curl -X PUT --data-binary @/opt/python-app/unit.conf --unix-socket /var/run/control.unit.sock http://localhost/config
