@@ -48,3 +48,13 @@ data "template_file" "nginx_lb_conf" {
     worker_nodes  = "${jsonencode(digitalocean_droplet.worker_nodes)}"
   }
 }
+
+data "template_file" "nginx_zone_sync_conf" {
+  template = "${file("../templates/nginx_zone_sync.conf")}"
+  depends_on = [
+    digitalocean_droplet.lb_nodes
+  ]
+  vars = {
+    lb_nodes  = "${jsonencode(digitalocean_droplet.lb_nodes)}"
+  }
+}

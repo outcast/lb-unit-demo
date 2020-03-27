@@ -1,0 +1,15 @@
+{
+    "VSPHERE_USERNAME": "administrator@vsphere.local",
+    "VSPHERE_PASSWORD": "P1ng3@gl3",
+    "VSPHERE_SERVER": "vcenter.crpslab.net",
+    "VSPHERE_HOST": "fujitsu2.crpslab.net",
+    "VSPHERE_DATASTORE": "vsanDatastore",
+    "VSPHERE_DATACENTER": "CRPSLAB",
+    "VSPHERE_CLUSTER": "Fujitsu",
+    "VSPHERE_RESOURCE_POOL": "pool1",
+    "VSPHERE_INSECURE": "false",
+    "VSPHERE_CONVERT_TO_TEMPLATE": "false",
+    "VSPHERE_CONVERT_TO_SNAPSHOT": "true",
+    "VSPHERE_NETWORK": "VLAN 60 - 10.7.2.0/24",
+    "VSPHERE_NETWORK_CARD": "vmxnet3"
+}

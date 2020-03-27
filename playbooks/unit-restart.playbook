@@ -1,5 +1,5 @@
 ---
-- name: Start service nginx, if not started or reload
+- name: Start Unit, if not started or reload
   service:
     name: unit
     state: restarted

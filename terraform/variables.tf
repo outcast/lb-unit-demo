@@ -3,14 +3,15 @@ variable "do_token" {}
 variable "ssh_keys" {
   type = set(string)
   default = [
-    "bigrig"
+    "bigrig",
+    "docker host"
   ]
 }
 
 variable "lb_zones" {
   type = map
   default = {
-    "nyc1" = 1
+    "nyc1" = 2
   }
 }
 

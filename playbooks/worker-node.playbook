@@ -41,9 +41,15 @@
       mode: '0644'
     with_fileglob:
       - ../python-app/*
+    tags:
+      - app
 
   - name: Unit Restart
     include: unit-restart.playbook
+    tags:
+      - app
 
   - name: Configure Example Unit Python3.6 app
     command: curl -X PUT --data-binary @/opt/python-app/unit.conf --unix-socket /var/run/control.unit.sock http://localhost/config
+    tags:
+      - app

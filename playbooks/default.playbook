@@ -41,6 +41,7 @@
   package:
     name:
     - nginx-plus
+    - nginx-plus-module-njs
     state: latest
 
 - name: Install Nginx Plus default config

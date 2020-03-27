@@ -33,3 +33,12 @@ resource "null_resource" "nginx_lb_conf" {
     command = "echo '${data.template_file.nginx_lb_conf.rendered}' > ../configs/nginx/lb.conf"
   }
 }
+
+resource "null_resource" "nginx_zone_sync_conf" {
+  triggers = {
+    template_rendered = data.template_file.nginx_zone_sync_conf.rendered
+  }
+  provisioner "local-exec" {
+    command = "echo '${data.template_file.nginx_zone_sync_conf.rendered}' > ../configs/nginx/zone_sync.conf"
+  }
+}

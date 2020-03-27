@@ -5,11 +5,55 @@
   - name: Default playbook
     include: default.playbook
 
-  - name: Install Nginx Stream LB config
+  - name: Make Nginx Plus stream config dir
+    file:
+      path: /etc/nginx/stream.d
+      state: directory
+      mode: '0755'
+
+  - name: Make Nginx Plus njs dir
+    file:
+      path: /etc/nginx/njs
+      state: directory
+      mode: '0755'
+
+  - name: Install Nginx Plus njs script/modules
+    copy:
+      src: "{{ item }}"
+      dest: /etc/nginx/njs
+      mode: '0644'
+    with_fileglob:
+      - ../njs/*.js
+    tags:
+    - config
+    - njs
+
+  - name: Install Nginx LB config
     copy:
       src: ../configs/nginx/lb.conf
       dest: /etc/nginx/conf.d/lb.conf
       mode: '0644'
+    tags:
+    - config
+
+  - name: Install Nginx Zone Sync config
+    template:
+      src: ../configs/nginx/zone_sync.conf
+      dest: /etc/nginx/stream.d/zone_sync.conf
+      mode: '0644'
+    tags:
+    - config
+
+  - name: Install Nginx config
+    copy:
+      src: ../templates/nginx.conf
+      dest: /etc/nginx/nginx.conf
+      mode: '0644'
+    tags:
+    - config
 
   - name: Nginx reload playbook
     include: nginx-reload.playbook
+    tags:
+    - config
+    - njs

@@ -5,15 +5,16 @@ Author: James Jones <jam.jones@nginx.com>
 ## Usage
 
 ### Prerequisites
-- terraform
-- ansible
+*Do not use package managers to install Terraform and Ansible*
+- Terraform >= 0.12.23
+- Ansible >= 2.9.6
 - Nginx Plus repo access cert and key
 - Digital Ocean Account with a ssh key imported
 
 ### Setup
 1. Clone repo
 2. Copy your Nginx repo access cert and key to './certs'
-3. In './terraform/variables.tf' add the key name to `data "digitalocean_ssh_key" "ssh_keys"`.
+3. In './terraform/variables.tf' add the key name from your Digital Ocean account to `data "digitalocean_ssh_key" "ssh_keys"`.
 
   Example:
 
@@ -37,4 +38,4 @@ Author: James Jones <jam.jones@nginx.com>
 
 
 ### Modifying Application
-The application is stored in `python-app`. You can add more modules or edit the file that is there. If you add more modules or change the name of current module be sure to edit the `unit.conf` according. 
+The application is stored in `python-app`. You can add more modules or edit the file that is there. If you add more modules or change the name of current module be sure to edit the `unit.conf` according.
