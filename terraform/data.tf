@@ -45,6 +45,9 @@ data "template_file" "nginx_lb_conf" {
     digitalocean_droplet.worker_nodes
   ]
   vars = {
-    worker_nodes  = "${jsonencode(digitalocean_droplet.worker_nodes)}"
+    worker_nodes  = "${jsonencode(digitalocean_droplet.worker_nodes)}",
+    foo  = "${digitalocean_droplet.worker_nodes[0].ipv4_address_private}",
+    bar  = "${digitalocean_droplet.worker_nodes[1].ipv4_address_private}",
+    blah = "${digitalocean_droplet.worker_nodes[2].ipv4_address_private}"
   }
 }
