@@ -2,6 +2,7 @@
 
 #Deploy Origin Server
 pushd ./terraform
+terraform init
 make plan
 make apply
 popd

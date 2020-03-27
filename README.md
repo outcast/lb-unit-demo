@@ -5,7 +5,8 @@ Author: James Jones <jam.jones@nginx.com>
 ## Usage
 
 ### Prerequisites
-- terraform >= 0.12.23
+*Do not use package managers to install Terraform and Ansible*
+- Terraform >= 0.12.23
 - Ansible >= 2.9.6
 - Nginx Plus repo access cert and key
 - Digital Ocean Account with a ssh key imported
