@@ -1,0 +1,18 @@
+---
+- name: Install Microsoft APT keys and repos via package
+  apt:
+    deb: https://packages.microsoft.com/config/ubuntu/{{ ansible_distribution_version }}/packages-microsoft-prod.deb
+    state: present
+
+- name: Add Universe Repo
+  apt_repository:
+    repo: deb http://archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }} universe
+    state: present
+
+- name: Install .Net
+  package:
+    name:
+    - dotnet-sdk-3.1
+    - aspnetcore-runtime-3.1
+    - dotnet-runtime-3.1
+    state: latest

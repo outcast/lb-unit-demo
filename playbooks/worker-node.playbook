@@ -28,22 +28,23 @@
       - unit-python3.6
       state: latest
 
-  - name: Make python-app dir
+  - name: Make .Net app dir
     file:
-      path: /opt/python-app
+      path: /opt/dotnet-app
       state: directory
       mode: '0755'
 
-  - name: copy python-app files
+  - name: copy .Net app files
     copy:
-      src: "{{ item }}"
-      dest: /opt/python-app
+      src: ../dotnet-app
+      dest: /opt
       mode: '0644'
-    with_fileglob:
-      - ../python-app/*
+
+  - name: Unit Restart
+    include: install-dotnet.playbook
 
   - name: Unit Restart
     include: unit-restart.playbook
 
-  - name: Configure Example Unit Python3.6 app
-    command: curl -X PUT --data-binary @/opt/python-app/unit.conf --unix-socket /var/run/control.unit.sock http://localhost/config
+  - name: Configure Example Unit .Net app
+    command: curl -X PUT --data-binary @/opt/dotnet-app/unit.conf --unix-socket /var/run/control.unit.sock http://localhost/config

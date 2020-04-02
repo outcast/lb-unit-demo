@@ -1,0 +1,10 @@
+E:\Users\James\code\F5\lb-demo\dotnet-app\nginx-unit-dotnet-app\nginx-unit-dotnet-app\bin\Release\netcoreapp2.1\nginx-unit-dotnet-app.deps.json
+E:\Users\James\code\F5\lb-demo\dotnet-app\nginx-unit-dotnet-app\nginx-unit-dotnet-app\bin\Release\netcoreapp2.1\nginx-unit-dotnet-app.runtimeconfig.json
+E:\Users\James\code\F5\lb-demo\dotnet-app\nginx-unit-dotnet-app\nginx-unit-dotnet-app\bin\Release\netcoreapp2.1\nginx-unit-dotnet-app.runtimeconfig.dev.json
+E:\Users\James\code\F5\lb-demo\dotnet-app\nginx-unit-dotnet-app\nginx-unit-dotnet-app\bin\Release\netcoreapp2.1\nginx-unit-dotnet-app.dll
+E:\Users\James\code\F5\lb-demo\dotnet-app\nginx-unit-dotnet-app\nginx-unit-dotnet-app\bin\Release\netcoreapp2.1\nginx-unit-dotnet-app.pdb
+E:\Users\James\code\F5\lb-demo\dotnet-app\nginx-unit-dotnet-app\nginx-unit-dotnet-app\obj\Release\netcoreapp2.1\nginx-unit-dotnet-app.csproj.CoreCompileInputs.cache
+E:\Users\James\code\F5\lb-demo\dotnet-app\nginx-unit-dotnet-app\nginx-unit-dotnet-app\obj\Release\netcoreapp2.1\nginx-unit-dotnet-app.AssemblyInfoInputs.cache
+E:\Users\James\code\F5\lb-demo\dotnet-app\nginx-unit-dotnet-app\nginx-unit-dotnet-app\obj\Release\netcoreapp2.1\nginx-unit-dotnet-app.AssemblyInfo.cs
+E:\Users\James\code\F5\lb-demo\dotnet-app\nginx-unit-dotnet-app\nginx-unit-dotnet-app\obj\Release\netcoreapp2.1\nginx-unit-dotnet-app.dll
+E:\Users\James\code\F5\lb-demo\dotnet-app\nginx-unit-dotnet-app\nginx-unit-dotnet-app\obj\Release\netcoreapp2.1\nginx-unit-dotnet-app.pdb
