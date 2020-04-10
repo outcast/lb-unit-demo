@@ -1,6 +1,7 @@
 ---
 - name: Setup Nginx Unit worker node
   hosts: worker
+  become: yes
   tasks:
 
   - name: Install Nginx OSS apt key
@@ -24,6 +25,7 @@
       - unit
       - python3
       - python3-pip
+      - clang
       - unit-dev
       - unit-python3.6
       state: latest
@@ -40,7 +42,7 @@
       dest: /opt
       mode: '0644'
 
-  - name: Unit Restart
+  - name: Install dotnet core
     include: install-dotnet.playbook
 
   - name: Unit Restart
