@@ -51,7 +51,7 @@ function proxy(r){
             proxyCookies[c] = cookies[c];
           }
         }
-        proxyCookies["JSESSIONID"]=sessionId;
+        proxyCookies[r.variables.session_name]=sessionId;
       }
       return getCookieString(proxyCookies,r);
     }
